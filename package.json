@@ -1,0 +1,25 @@
+{
+  "name": "uni-mp-canvas-tool",
+  "version": "1.0.0",
+  "description": "a small canvasTool for uniapp-mp-weixin, can help you render your canvas easily such as drawText、drawView or drawImage. And you don't need to calculate the scale rate for diffient pixel ratio and just pass the params you get from design draft with 750rpx width by default.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1714080902120/uni-canvasTool.git"
+  },
+  "keywords": [
+    "uniapp",
+    "mp-weixin",
+    "canvas",
+    "tool"
+  ],
+  "author": "1714080902120",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1714080902120/uni-canvasTool/issues"
+  },
+  "homepage": "https://github.com/1714080902120/uni-canvasTool#readme"
+}
