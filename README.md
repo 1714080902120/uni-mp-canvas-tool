@@ -1,4 +1,8 @@
 # 一个uniapp mp-weixin的canvas工具
+已发布至`npm`，有需要可直接下载.
+```bash
+npm install uni-mp-canvas-tool
+```
 
 ## 前言
 这是一个`uniapp`转`mp-weixin`的`canvas`工具
