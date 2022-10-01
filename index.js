@@ -1,35 +1,11 @@
-import { compareVersion } from '@/utils/business/version.js';
+import { compareVersion } from './utils.js';
 
-import { getDeviceWidth } from '@/utils/system';
+import { getDeviceWidth } from './utils.js';
 
 let fitBox = null;
 let toFit = null;
 /**
  * @description 一个简化版的canvas工具,提供绘制view、image、text、roundRect、clear、drawNodeList以及render等这几个方法。
- *
- * 由于api的异步问题，这里做了几次尝试，最开始init放构造函数，然后function是执行队列异步执行，但是很丑，代码先保留了，
- * 现在是把init暴露了出去，让开发者去注意生成实例后务必 await instance.init(id, vm);
- * 另外需要注意drawimage/带有image节点的drawNodeList的异步问题，如果你有需要拿到最后的tempPath并return 给别的方法,（比如是转发图片自定义这种）
- * 那你就得注意drawImage/带有image节点的drawNodeList的异步问题，推荐加个await 在前面。
- * 如果只是渲染，就不用在意。
- *
- * 或者你可以在生成实例后直接调用render方法，但如果你有需要用到其它数据，请确保获取的时机是正确的。
- *
- *
- * 这里提一下设备像素相关的，由于设计稿是根据iphone678的机型去设计的，然后一般给出的是750rpx宽，所以转换过来
- * 就是375px, dpr即像素比是1:2。但是在一些其他手机上就不是这个比例了，比如我的蛇皮小米8是393px的。。。
- *
- * 你的设计稿已375为倍速，如果你init传入的比例不是这个建议设计稿转成成比例的。这里默认是750
- *
- * scaleRate公式：(设计稿宽 / 375) / (设备宽 / 375) 即：设计稿宽 / 设备宽。
- *
- * 为什么要这样做？是为了让你开发的时候不用自己去换算，这个工具里大部分情况会帮你去算，
- * 所以开发直接传入设计稿给出的宽高即可。
- *
- * 不过关于文本的你需要多注意下，因为比例挺恶心不一定是整数
- *
- *
- * 这个工具理论上应该是这个项目里canvas相关最简洁易懂的，有需要请自行拓展，继承之类的。
  * @param { object } options
  * @returns { void }
  */
