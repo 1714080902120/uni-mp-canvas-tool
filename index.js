@@ -365,7 +365,7 @@ export class CanvasTool {
 
         // 用于判断行是否超出设定好的高度
         function isOverFlow(y) {
-            return y + lineHeight >= baseY + h;
+            return parseInt(y + lineHeight) >= parseInt(baseY + h);
         }
 
         // 逐行绘制
@@ -407,7 +407,7 @@ export class CanvasTool {
 
         // 避免溢出
         if (line) {
-            if (y + lineHeight > baseY + h) {
+            if (y > baseY + h) {
                 if (textRenderStack.length > 0) {
                     const lastItem =
                         textRenderStack[textRenderStack.length - 1];
